@@ -1,0 +1,16 @@
+{
+    "contents" : "##cacheMatrix.R\n##Two functions\n##makeCacheMatrix() - cache matrix and inverse\n##cacheSolve() - calculate inverse of matrix\n\n## set the value of the matrix\n## get the value of the matrix\n## set the value of the inverse\n## get the value of the inverse\n\nmakeCacheMatrix <- function(x = matrix()) {\n\n    inv <- NULL\n    set <- function(y) {\n      x <<- y\n      inv <<- NULL\n    }\n    get <- function() x\n    setinverse <- function(inverse) inv <<- inverse\n    getinverse <- function() inv\n    list(set=set, get=get, setinverse=setinverse, getinverse=getinverse)\n\n}\n\n## returns inverse of the matrix\n## first checks for cached solution\n\ncacheSolve <- function(x, ...) {\n   inv <- x$getinverse()\n    if(!is.null(inv)) {\n       return(inv)\n    }\n  data <- x$get()\n  inv <- solve(data)\n  x$setinverse(inv)\n  inv\n}\n  \n\n",
+    "created" : 1451008268706.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3397429779",
+    "id" : "B8D3CEDF",
+    "lastKnownWriteTime" : 1451132681,
+    "path" : "C:/Users/John/OneDrive/Documents/Coursera/RProgramming/Week3/ProgrammingAssignment2/cachematrix.R",
+    "project_path" : "cachematrix.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
